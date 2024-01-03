@@ -1,24 +1,13 @@
 # my-web-overvue
 
-## Project setup
-```
-npm install
-```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
 
-### Compiles and minifies for production
-```
-npm run build
-```
+ Welcome to My Creative WEB Universe
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Used experience:
+* Vue 3
+* VueCLI
+* Bootstrap 5
+* Vue - Router
+* Babel
+* Linter
