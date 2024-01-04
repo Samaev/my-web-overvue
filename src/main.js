@@ -4,9 +4,10 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import VueGoogleMaps from '@fawmi/vue-google-maps';
 
 const app = createApp(App);
+const apiKey = process.env.VUE_APP_API_KEY;
 
 app.use(VueGoogleMaps, {
     load: {
-        key: 'AIzaSyAptTl_riLAD7b7DpGWdLGZsaOgZYPtlCA',
+        key: apiKey,
     },
 }).mount('#app');
