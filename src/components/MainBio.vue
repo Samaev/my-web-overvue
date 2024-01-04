@@ -1,5 +1,5 @@
 <template>
-  <div class="container main-bio" id="main-bio">
+  <div class="main-bio" id="main-bio">
     <h3 class="text-center">
       Frontend Developer / Vue JS & Laravel
     </h3>
@@ -51,7 +51,5 @@ export default {
 </script>
 
 <style>
-.main-bio {
-  height: 100vh;
-}
+
 </style>

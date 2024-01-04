@@ -1,7 +1,12 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import router from './router';
 import 'bootstrap/dist/css/bootstrap.min.css'
+import VueGoogleMaps from '@fawmi/vue-google-maps';
 
+const app = createApp(App);
 
-createApp(App).use(router).mount('#app')
+app.use(VueGoogleMaps, {
+    load: {
+        key: 'AIzaSyAptTl_riLAD7b7DpGWdLGZsaOgZYPtlCA',
+    },
+}).mount('#app');
