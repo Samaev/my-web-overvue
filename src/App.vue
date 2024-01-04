@@ -2,12 +2,6 @@
   <TopBanner />
   <MainBio />
   <ProjectsList />
-  <router-link to="/">Home</router-link>
-  <router-link to="/top-banner">TopBanner 1</router-link>
-  <router-link to="/main-bio">MainBio 2</router-link>
-  <router-link to="/projects-list">ProjectsList 3</router-link>
-
-  <router-view></router-view>
 </template>
 
 <script>
