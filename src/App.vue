@@ -33,17 +33,22 @@ export default {
   scroll-behavior: smooth;
 
 }
-html, body {
-  margin:0;
-  padding:0;
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('/public/photos/bg1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: Arial, sans-serif;
 }
 #top-banner, #main-bio, #projects-list, #relevant-experience, #contact-me {
   height: 100vh;
-  background: linear-gradient(135deg, #f9fbff 5.03%, #e3eeff 38.64%, #f9fbff 80.89%), #fff;
+  background-color: rgba(145, 142, 142, 0.5);
   border-radius:15px;
   margin: 25px auto;
-  //background: rgba(255, 255, 255, 0.5);
   box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
   padding: 20px 40px;
+  color:oldlace;
 }
 </style>

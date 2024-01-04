@@ -1,5 +1,5 @@
 <template>
-    <div class="p-5 top-banner" id="top-banner">
+    <div class="top-banner" id="top-banner">
       <div class="row">
         <div class="img-container col-4">
           <img class="main-photo" src="../../public/photos/20200731_172025.jpg" alt="My photo">
@@ -12,18 +12,22 @@
             </p>
           </div>
         </div>
-        <div class="skill-container">
-          <transition-group name="fade" tag="div">
-            <div v-for="(skill, index) in visibleSkills" :key="index" :style="getSkillStyle(index)" class="skill-box">
-              {{ skill }}
-            </div>
-          </transition-group>
-        </div>
+
+      </div>
+      <div class="skill-container">
+        <transition-group name="fade" tag="div">
+          <div v-for="(skill, index) in visibleSkills" :key="index" :style="getSkillStyle(index)" class="skill-box">
+            {{ skill }}
+          </div>
+        </transition-group>
       </div>
       <div class="up-button">
         <a class="btn btn-primary" href="#main-bio">MainBio</a>
         <a class="btn btn-primary" href="#projects-list">ProjectsList</a>
         <a class="btn btn-primary" href="#">to The TOP</a>
+      </div>
+      <div class="cv-button">
+        <button @click="downloadPdf"><img class="cv-icon" src="../../public/photos/cv.png" alt="My CV Download"></button>
       </div>
     </div>
 </template>
@@ -42,9 +46,9 @@ export default {
         'HTML5', 'TypeScript', 'CSS', 'VUEX',
         'SASS', 'Bootstrap', 'Redux', 'Git',
         'Clean Code', 'JSON', 'Hubspot', 'REST/API',
+        'CSS3',
       ],
       visibleSkills: [],
-      maxVisibleSkills: 8,
       animationInterval: null,
       };
   },
@@ -57,7 +61,7 @@ export default {
         if (index === this.originalText.length) {
           clearInterval(typingInterval);
         }
-      }, 100); // Adjust the interval as needed
+      }, 100);
     },
     startSkillAnimation() {
       let index = 0;
@@ -68,20 +72,32 @@ export default {
         } else {
           clearInterval(this.animationInterval);
         }
-      }, 3000); // Adjust the interval as needed
+      }, 3000);
     },
     getSkillStyle(index) {
       const isVisible = this.visibleSkills.includes(this.skills[index]);
-      const top = `${Math.random() * 160}px`; // Adjust the range as needed
-      const left = `${Math.random() * 60}vw`; // Adjust the range as needed
+      const top = `${Math.random() * 90}%`;
+      const left = `${Math.random() * 90}%`;
 
       return {
         position: 'absolute',
         top,
         left,
         transform: isVisible ? 'translate(0, 0)' : 'translate(-100%, -100%)',
-        transition: 'transform 1s ease', // Adjust the transition duration as needed
+        transition: 'transform 1s ease',
       };
+    },
+    downloadPdf() {
+      const pdfUrl = '../../public/assets/AndreySamaevVueLaravel.pdf';
+
+      const link = document.createElement('a');
+      link.href = pdfUrl;
+      link.download = 'AndreySamaevVueLaravel.pdf';
+
+      document.body.appendChild(link);
+      link.click();
+
+      document.body.removeChild(link);
     },
   },
   created() {
@@ -97,7 +113,11 @@ export default {
 </script>
 
 <style>
-
+.top-banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 .up-button{
   display: flex;
   flex-direction: column;
@@ -121,15 +141,14 @@ export default {
   position: relative;
   width: 600px;
   height: 200px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  border-radius: 10px;
 }
 
 .skill-box {
   position: absolute;
   padding: 8px;
-  background: #fff;
+  background: #4AC6C6;
   color:black;
+  border: 0px solid black;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   transition: all 2s ease; /* Adjust the transition duration as needed */
@@ -141,6 +160,37 @@ export default {
 
 .fade-enter, .fade-leave-to {
   opacity: 1;
+}
+.cv-button {
+  position: fixed;
+  top:25px;
+  right:15px;
+  cursor: pointer;
+}
+.cv-button::before {
+  transition: all 2s ease;
+}
+
+.cv-icon {
+  height: 50px;
+  width: 50px;
+  transition: all 3s ease;
+}
+
+.cv-icon:hover {
+  transform: scale(1.3);
+}
+.cv-button:hover::before {
+  content: "Download CV as PDF";
+  display: block;
+  position: absolute;
+  top: 60px;
+  left: -200px;
+  background-color: #4AC6C6;
+  color: #0c0c0c;
+  padding: 15px 25px;
+  box-shadow: 0 14px 18px rgba(0, 0, 0, 0.5);
+
 }
 
 </style>
