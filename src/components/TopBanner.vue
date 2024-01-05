@@ -1,11 +1,12 @@
 <template>
     <div class="top-banner" id="top-banner">
+
       <div class="row">
         <div class="img-container col-4">
           <img class="main-photo" src="../../public/photos/20200731_172025.jpg" alt="My photo">
         </div>
         <div class="d-flex flex-column align-items-center col-8">
-          <h1>Welcome to My WEB Universe</h1>
+          <h1>{{ $t('greeting') }}</h1>
           <div class="d-flex flex-row-reverse">
             <p>
               {{ typingText }}
@@ -15,6 +16,7 @@
 
       </div>
       <div class="skill-container">
+        <h4 class="skills-title">{{ $t('skillsText') }}</h4>
         <transition-group name="fade" tag="div">
           <div v-for="(skill, index) in visibleSkills" :key="index" :style="getSkillStyle(index)" class="skill-box">
             {{ skill }}
@@ -22,6 +24,8 @@
         </transition-group>
       </div>
       <div class="up-button">
+        <button @click="changeLanguage('en')">EN</button>
+        <button @click="changeLanguage('ua')">UA</button>
         <a class="btn btn-primary" href="#main-bio">MainBio</a>
         <a class="btn btn-primary" href="#projects-list">ProjectsList</a>
         <a class="btn btn-primary" href="#">to The TOP</a>
@@ -39,7 +43,7 @@ export default {
   },
   data() {
     return {
-      originalText: "My name is Andrey Samaev. I'm Web Developer with strong Laravel Experience as well. Experienced English-speaking Web Developer with 4+ years of comercial experience, specializing in Web Development. Skilled in direct client contact to deliver exactly what they want. Ready to take on new challenges! Let's create something amazing together!",
+      originalText: this.$t('originalText'),
       typingText: "",
       skills: [
         'JavaScript', 'Vue.js', 'PHP/Laravel', 'React',
@@ -99,6 +103,10 @@ export default {
 
       document.body.removeChild(link);
     },
+    changeLanguage(locale) {
+      this.$i18n.locale = locale;
+      localStorage.setItem('userLocale', locale);
+    },
   },
   created() {
       this.startSkillAnimation();
@@ -139,8 +147,9 @@ export default {
 }
 .skill-container {
   position: relative;
-  width: 600px;
-  height: 200px;
+  width: 100%;
+  height: auto;
+  margin-bottom: 40px;
 }
 
 .skill-box {
@@ -190,7 +199,12 @@ export default {
   color: #0c0c0c;
   padding: 15px 25px;
   box-shadow: 0 14px 18px rgba(0, 0, 0, 0.5);
-
+}
+.skills-title {
+  margin:auto;
+  text-align: center;
+  font-size: 9em;
+  opacity:0.3;
 }
 
 </style>

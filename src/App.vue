@@ -5,7 +5,6 @@
     <RelevantExperience />
     <ProjectsList />
     <ContactMe />
-    <MapComponent />
   </div>
 </template>
 
@@ -40,15 +39,15 @@ body {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  font-family: Arial, sans-serif;
+  font-family: Roboto, sans-serif;
 }
 #top-banner, #main-bio, #projects-list, #relevant-experience, #contact-me {
-  height: 100vh;
-  background-color: rgba(145, 142, 142, 0.5);
-  border-radius:15px;
+  background-color: rgba(43, 7, 7, 0.5);
+  border-radius:1px;
   margin: 25px auto;
-  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 22px 30px 0px rgba(0, 0, 0, 0.1);
   padding: 20px 40px;
   color:oldlace;
+  font-family: Roboto, sans-serif;
 }
 </style>

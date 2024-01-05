@@ -25,6 +25,19 @@
           Obtaining tasks with SQL, PHP - Laravel so easy for me).
         </div>
       </div>
+      <div class="row border-black border-bottom">
+        <div class="col-6">
+          <h5>Frontend Developer VueJS|Laravel</h5>
+          <p>{ SearchInform.com }</p>
+          <p>March, 2020 - February, 2022</p>
+        </div>
+        <div class="col-6">
+          JavaScript Expertise:
+          Proficient in JavaScript language fundamentals and concepts.
+          Comfortable with asynchronous programming and promises.
+          Skilled in building dynamic and interactive user interfaces.
+        </div>
+      </div>
     </div>
   </div>
 </template>
