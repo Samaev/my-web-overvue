@@ -26,13 +26,8 @@
       <div class="up-button">
         <button @click="changeLanguage('en')">EN</button>
         <button @click="changeLanguage('ua')">UA</button>
-        <a class="btn btn-primary" href="#main-bio">MainBio</a>
-        <a class="btn btn-primary" href="#projects-list">ProjectsList</a>
-        <a class="btn btn-primary" href="#">to The TOP</a>
       </div>
-      <div class="cv-button">
-        <button @click="downloadPdf"><img class="cv-icon" src="../../public/photos/cv.png" alt="My CV Download"></button>
-      </div>
+
     </div>
 </template>
 
