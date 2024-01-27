@@ -1,13 +1,12 @@
 <template>
-
-
-
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top ">
     <div class="container d-flex align-items-center">
-
+      <div style="height: 40px;width: 40px; background-color: white;border-radius: 50%;">
+        <img src="photos/logo.jpg" alt="Me" style="position: relative;height: 40px;width: 40px; background-color: white;border-radius: 50%;">
+      </div>
       <h1 class="logo me-auto"><a href="index.html">SAMAEV</a></h1>
-      <a @click="downloadPdf" class="download-cv" href="javascript:void(0)">Download CV</a>
+
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
@@ -16,21 +15,21 @@
           <li><a class="nav-link   scrollto" href="#portfolio">Portfolio</a></li>
           <li><a class="nav-link scrollto" href="#team">Experience</a></li>
           <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul>
+<!--            <ul>-->
+<!--              <li><a href="#">Drop Down 1</a></li>-->
+<!--              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>-->
+<!--                <ul>-->
+<!--                  <li><a href="#">Deep Drop Down 1</a></li>-->
+<!--                  <li><a href="#">Deep Drop Down 2</a></li>-->
+<!--                  <li><a href="#">Deep Drop Down 3</a></li>-->
+<!--                  <li><a href="#">Deep Drop Down 4</a></li>-->
+<!--                  <li><a href="#">Deep Drop Down 5</a></li>-->
+<!--                </ul>-->
+<!--              </li>-->
+<!--              <li><a href="#">Drop Down 2</a></li>-->
+<!--              <li><a href="#">Drop Down 3</a></li>-->
+<!--              <li><a href="#">Drop Down 4</a></li>-->
+<!--            </ul>-->
           </li>
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
 
@@ -50,12 +49,22 @@
           <h1>Frontend Web Developer</h1>
           <h2>4+ years Vue + Laravel Experience</h2>
           <div class="d-flex justify-content-center justify-content-lg-start">
-            <a href="#about" class="btn-get-started scrollto">Get Started</a>
-            <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
+            <a href="javascript:void(0)" @click="downloadCv" class="btn-get-started">Download CV</a>
+            <a href="javascript:void(0)" @click="showVideo" class="btn-watch-video"><img src="photos/yt.png" style="height: 20px;margin-right: 10px" alt="you tube icon"><span>Watch Intro</span></a>
+              <div v-if="videoVisible" style="position: fixed;top:20%;left:30%;z-index: 3">
+                <iframe
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/BesFoR8IeME"
+                    frameborder="0"
+                    allowfullscreen
+                ></iframe>
+                <button style="height: 50px;width: 50px;border-radius: 50%;position: absolute;top: -60px;right: -60px" @click="videoVisible=false">X</button>
+              </div>
           </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
-          <img src="photos/20200301_111356.jpg" class="img-fluid animated" alt="">
+          <img src="photos/cosmo.png" class="img-fluid animated" style="height: 70vh" alt="Me ready to fly">
         </div>
       </div>
     </div>
@@ -99,7 +108,7 @@
       </div>
     </section><!-- End Cliens Section -->
 
-    <!-- ======= About Us Section ======= -->
+    <!-- ======= About Me Section ======= -->
     <section id="about" class="about">
       <div class="container" data-aos="fade-up">
 
@@ -127,62 +136,175 @@
         </div>
 
       </div>
-    </section><!-- End About Us Section -->
+    </section><!-- End About Me Section -->
 
-    <!-- ======= Why Us Section ======= -->
-    <section id="why-us" class="why-us section-bg">
-      <div class="container-fluid" data-aos="fade-up">
+    <!-- ======= Education ======= -->
+    <section id="team" class="team section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Experience</h2>
+          <p>Proficient in JavaScript language fundamentals and concepts.
+            Comfortable with asynchronous programming and promises.
+            Vue.js and React Proficiency:
+
+            Two years of hands-on experience with Vue.js and React frameworks.
+            Skilled in building dynamic and interactive user interfaces.
+            Familiar with component-based architecture and reusability.
+            Front-End Development:
+
+            Strong understanding of front-end architecture patterns.
+            Capable of efficiently managing state and handling UI updates.
+            Experienced in integrating APIs to create data-driven applications.
+            Technical Insights:
+
+            Knowledge of virtual DOM and its role in optimizing UI rendering.
+            Familiarity with component lifecycle management and reactivity concepts.
+            Comparative Framework Knowledge:
+
+            Able to assess the strengths and differences between Vue.js and React.
+            Equipped to make informed framework choices based on project requirements.
+            Core Web Technologies:
+
+            Solid grasp of HTML, CSS, and related styling concepts.
+            Potentially experienced with CSS preprocessors (e.g., Sass, Less).</p>
+        </div>
 
         <div class="row">
 
-          <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
-
-            <div class="content">
-              <h3>Eum ipsam laborum deleniti <strong>velit pariatur architecto aut nihil</strong></h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
-              </p>
+          <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="100">
+            <div class="member d-flex align-items-start">
+              <div class="pic"><img src="photos/core.jpg" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Frontend Developer</h4>
+                <span>CORE IT Development | Latvia</span>
+                <p>Oct 2023 - Present · 4 mos</p>
+                <div class="social">
+                  <a href=""><i class="ri-twitter-fill"></i></a>
+                  <a href=""><i class="ri-facebook-fill"></i></a>
+                  <a href=""><i class="ri-instagram-fill"></i></a>
+                  <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                </div>
+              </div>
             </div>
-
-            <div class="accordion-list">
-              <ul>
-                <li>
-                  <a data-bs-toggle="collapse" class="collapse" data-bs-target="#accordion-list-1"><span>01</span> Non consectetur a erat nam at lectus urna duis? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-                  <div id="accordion-list-1" class="collapse show" data-bs-parent=".accordion-list">
-                    <p>
-                      Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
-                    </p>
-                  </div>
-                </li>
-
-                <li>
-                  <a data-bs-toggle="collapse" data-bs-target="#accordion-list-2" class="collapsed"><span>02</span> Feugiat scelerisque varius morbi enim nunc? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-                  <div id="accordion-list-2" class="collapse" data-bs-parent=".accordion-list">
-                    <p>
-                      Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
-                    </p>
-                  </div>
-                </li>
-
-                <li>
-                  <a data-bs-toggle="collapse" data-bs-target="#accordion-list-3" class="collapsed"><span>03</span> Dolor sit amet consectetur adipiscing elit? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-                  <div id="accordion-list-3" class="collapse" data-bs-parent=".accordion-list">
-                    <p>
-                      Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
-                    </p>
-                  </div>
-                </li>
-
-              </ul>
-            </div>
-
           </div>
 
-          <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img" style='background-image: url("assets/img/why-us.png");' data-aos="zoom-in" data-aos-delay="150"><img src="photos/20200301_111356.jpg" class="img-fluid animated" alt=""></div>
+          <div class="col-lg-6 mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="200">
+            <div class="member d-flex align-items-start">
+              <div class="pic"><img src="photos/hubstart.jpg" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Frontend Developer Vue | Laravel</h4>
+                <span>HubStart.IO | USA</span>
+                <p>Aug 2022 - Oct 2023 · 1 yr 3 mos</p>
+                <div class="social">
+                  <a href=""><i class="ri-twitter-fill"></i></a>
+                  <a href=""><i class="ri-facebook-fill"></i></a>
+                  <a href=""><i class="ri-instagram-fill"></i></a>
+                  <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 mt-4" data-aos="zoom-in" data-aos-delay="300">
+            <div class="member d-flex align-items-start">
+              <div class="pic"><img src="photos/searchinform.jpg" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Frontend Web Developer</h4>
+                <span>SearchInform.COM | Singapur</span>
+                <p>Mar 2020 - Feb 2022 · 2 yrs</p>
+                <div class="social">
+                  <a href=""><i class="ri-twitter-fill"></i></a>
+                  <a href=""><i class="ri-facebook-fill"></i></a>
+                  <a href=""><i class="ri-instagram-fill"></i></a>
+                  <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 mt-4" data-aos="zoom-in" data-aos-delay="400">
+            <div class="member d-flex align-items-start">
+              <div class="pic"><img src="photos/searchinform.jpg" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Head of technical support Department</h4>
+                <span>SearchInform.COM | Singapur</span>
+                <p>Jul 2015 - Mar 2020 · 4 yrs 9 mos</p>
+                <div class="social">
+                  <a href=""><i class="ri-twitter-fill"></i></a>
+                  <a href=""><i class="ri-facebook-fill"></i></a>
+                  <a href=""><i class="ri-instagram-fill"></i></a>
+                  <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
 
       </div>
-    </section><!-- End Why Us Section -->
+    </section><!-- End Team Section -->
+
+    <!-- ======= Education ======= -->
+    <section id="services" class="services section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Education</h2>
+          <p>Master`s degree in Engineering</p>
+        </div>
+
+        <div class="row">
+          <div class="col-xl-6 col-md-12 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box w-100 row">
+              <div class="icon col col-lg-3"><img class="univer" src="photos/vnu.jpg" alt="University"></div>
+              <div class="col col-lg-9">
+                <h4 ><a href="">East Ukranian National Technical University</a></h4>
+                <p>Master`s degree in Engineering with honors</p>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col-xl-6 col-md-12 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box w-100 row">
+              <div class="icon col-12 col-lg-6"><img class="univer" src="photos/academy.jpg" alt="Academy"></div>
+              <div class="col-12 col-lg-6">
+                <h4><a href="">Mate Academy</a></h4>
+                <p>Full-time Intensive Course Frontent Development / React</p>
+              </div>
+            </div>
+          </div>
+
+          <!--          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">-->
+          <!--            <div class="icon-box">-->
+          <!--              <div class="icon"><i class="bx bx-file"></i></div>-->
+          <!--              <h4><a href="">Sed ut perspici</a></h4>-->
+          <!--              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>-->
+          <!--            </div>-->
+          <!--          </div>-->
+
+          <!--          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="300">-->
+          <!--            <div class="icon-box">-->
+          <!--              <div class="icon"><i class="bx bx-tachometer"></i></div>-->
+          <!--              <h4><a href="">Magni Dolores</a></h4>-->
+          <!--              <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>-->
+          <!--            </div>-->
+          <!--          </div>-->
+
+          <!--          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="400">-->
+          <!--            <div class="icon-box">-->
+          <!--              <div class="icon"><i class="bx bx-layer"></i></div>-->
+          <!--              <h4><a href="">Nemo Enim</a></h4>-->
+          <!--              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>-->
+          <!--            </div>-->
+          <!--          </div>-->
+
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
 
     <!-- ======= Skills Section ======= -->
     <section id="skills" class="skills">
@@ -237,65 +359,6 @@
       </div>
     </section><!-- End Skills Section -->
 
-    <!-- ======= Services Section ======= -->
-    <section id="services" class="services section-bg">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Education</h2>
-          <p>Master`s degree in Engineering</p>
-        </div>
-
-        <div class="row">
-          <div class="col-xl-6 col-md-12 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-            <div class="icon-box w-100 row">
-              <div class="icon col-3"><img class="univer" src="photos/vnu.jpg" alt="University"></div>
-              <div class="col-9">
-                <h4 ><a href="">East Ukranian National Technical University</a></h4>
-                <p>Master`s degree in Engineering with honors</p>
-              </div>
-
-            </div>
-          </div>
-
-          <div class="col-xl-6 col-md-12 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-            <div class="icon-box w-100 row">
-              <div class="icon col-3"><img class="univer" src="photos/academy.jpg" alt="Academy"></div>
-              <div class="col-9">
-                <h4><a href="">Mate Academy</a></h4>
-                <p>Full-time Intensive Course Frontent Development / React</p>
-              </div>
-            </div>
-          </div>
-
-<!--          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">-->
-<!--            <div class="icon-box">-->
-<!--              <div class="icon"><i class="bx bx-file"></i></div>-->
-<!--              <h4><a href="">Sed ut perspici</a></h4>-->
-<!--              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>-->
-<!--            </div>-->
-<!--          </div>-->
-
-<!--          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="300">-->
-<!--            <div class="icon-box">-->
-<!--              <div class="icon"><i class="bx bx-tachometer"></i></div>-->
-<!--              <h4><a href="">Magni Dolores</a></h4>-->
-<!--              <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>-->
-<!--            </div>-->
-<!--          </div>-->
-
-<!--          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="400">-->
-<!--            <div class="icon-box">-->
-<!--              <div class="icon"><i class="bx bx-layer"></i></div>-->
-<!--              <h4><a href="">Nemo Enim</a></h4>-->
-<!--              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>-->
-<!--            </div>-->
-<!--          </div>-->
-
-        </div>
-
-      </div>
-    </section><!-- End Services Section -->
 
     <!-- ======= Cta Section ======= -->
     <section id="cta" class="cta">
@@ -333,7 +396,7 @@
         <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-img"><img src="photos/20200301_111356.jpg" class="img-fluid" alt=""></div>
+            <div class="portfolio-img"><img src="photos/portfolio.png" class="img-fluid" alt=""></div>
             <div class="portfolio-info">
               <h4>App 1</h4>
               <p>App</p>
@@ -343,17 +406,17 @@
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-img"><img src="photos/20200301_111356.jpg" class="img-fluid" alt=""></div>
+            <div class="portfolio-img"><img src="photos/portfolio.png" class="img-fluid" alt=""></div>
             <div class="portfolio-info">
-              <h4>Web 3</h4>
-              <p>Web</p>
+<!--              <h4>Web 3</h4>-->
+<!--              <p>Web</p>-->
               <a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
               <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-img"><img src="photos/20200301_111356.jpg" class="img-fluid" alt=""></div>
+            <div class="portfolio-img"><img src="photos/portfolio.png" class="img-fluid" alt=""></div>
             <div class="portfolio-info">
               <h4>App 2</h4>
               <p>App</p>
@@ -363,7 +426,7 @@
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-img"><img src="photos/20200301_111356.jpg" class="img-fluid" alt=""></div>
+            <div class="portfolio-img"><img src="photos/portfolio.png" class="img-fluid" alt=""></div>
             <div class="portfolio-info">
               <h4>Card 2</h4>
               <p>Card</p>
@@ -373,7 +436,7 @@
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-img"><img src="photos/20200301_111356.jpg" class="img-fluid" alt=""></div>
+            <div class="portfolio-img"><img src="photos/portfolio.png" class="img-fluid" alt=""></div>
             <div class="portfolio-info">
               <h4>Web 2</h4>
               <p>Web</p>
@@ -383,7 +446,7 @@
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-img"><img src="photos/20200301_111356.jpg" class="img-fluid" alt=""></div>
+            <div class="portfolio-img"><img src="photos/portfolio.png" class="img-fluid" alt=""></div>
             <div class="portfolio-info">
               <h4>App 3</h4>
               <p>App</p>
@@ -393,7 +456,7 @@
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-img"><img src="photos/20200301_111356.jpg" class="img-fluid" alt=""></div>
+            <div class="portfolio-img"><img src="photos/portfolio.png" class="img-fluid" alt=""></div>
             <div class="portfolio-info">
               <h4>Card 1</h4>
               <p>Card</p>
@@ -403,20 +466,20 @@
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-img"><img src="photos/20200301_111356.jpg" class="img-fluid" alt=""></div>
+            <div class="portfolio-img"><img src="photos/portfolio.png" class="img-fluid" alt=""></div>
             <div class="portfolio-info">
-              <h4>Card 3</h4>
-              <p>Card</p>
+<!--              <h4>Card 3</h4>-->
+<!--              <p>Card</p>-->
               <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 3"><i class="bx bx-plus"></i></a>
               <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-img"><img src="photos/20200301_111356.jpg" class="img-fluid" alt=""></div>
+            <div class="portfolio-img"><img src="photos/portfolio.png" class="img-fluid" alt=""></div>
             <div class="portfolio-info">
-              <h4>Web 3</h4>
-              <p>Web</p>
+<!--              <h4>Web 3</h4>-->
+<!--              <p>Web</p>-->
               <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
               <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
@@ -427,115 +490,66 @@
       </div>
     </section><!-- End Portfolio Section -->
 
-    <!-- ======= Team Section ======= -->
-    <section id="team" class="team section-bg">
-      <div class="container" data-aos="fade-up">
 
-        <div class="section-title">
-          <h2>Experience</h2>
-          <p>Proficient in JavaScript language fundamentals and concepts.
-            Comfortable with asynchronous programming and promises.
-            Vue.js and React Proficiency:
 
-            Two years of hands-on experience with Vue.js and React frameworks.
-            Skilled in building dynamic and interactive user interfaces.
-            Familiar with component-based architecture and reusability.
-            Front-End Development:
-
-            Strong understanding of front-end architecture patterns.
-            Capable of efficiently managing state and handling UI updates.
-            Experienced in integrating APIs to create data-driven applications.
-            Technical Insights:
-
-            Knowledge of virtual DOM and its role in optimizing UI rendering.
-            Familiarity with component lifecycle management and reactivity concepts.
-            Comparative Framework Knowledge:
-
-            Able to assess the strengths and differences between Vue.js and React.
-            Equipped to make informed framework choices based on project requirements.
-            Core Web Technologies:
-
-            Solid grasp of HTML, CSS, and related styling concepts.
-            Potentially experienced with CSS preprocessors (e.g., Sass, Less).</p>
-        </div>
+    <!-- ======= Why Us Section ======= -->
+    <section id="why-us" class="d-none why-us section-bg">
+      <div class="container-fluid" data-aos="fade-up">
 
         <div class="row">
 
-          <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="100">
-            <div class="member d-flex align-items-start">
-              <div class="pic"><img src="photos/20200301_111356.jpg" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Frontend Developer</h4>
-                <span>CORE IT Development | Latvia</span>
-                <p>Oct 2023 - Present · 4 mos</p>
-                <div class="social">
-                  <a href=""><i class="ri-twitter-fill"></i></a>
-                  <a href=""><i class="ri-facebook-fill"></i></a>
-                  <a href=""><i class="ri-instagram-fill"></i></a>
-                  <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-                </div>
-              </div>
+          <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
+
+            <div class="content">
+              <h3>Eum ipsam laborum deleniti <strong>velit pariatur architecto aut nihil</strong></h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
+              </p>
             </div>
+
+            <div class="accordion-list">
+              <ul>
+                <li>
+                  <a data-bs-toggle="collapse" class="collapse" data-bs-target="#accordion-list-1"><span>01</span> Non consectetur a erat nam at lectus urna duis? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                  <div id="accordion-list-1" class="collapse show" data-bs-parent=".accordion-list">
+                    <p>
+                      Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
+                    </p>
+                  </div>
+                </li>
+
+                <li>
+                  <a data-bs-toggle="collapse" data-bs-target="#accordion-list-2" class="collapsed"><span>02</span> Feugiat scelerisque varius morbi enim nunc? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                  <div id="accordion-list-2" class="collapse" data-bs-parent=".accordion-list">
+                    <p>
+                      Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
+                    </p>
+                  </div>
+                </li>
+
+                <li>
+                  <a data-bs-toggle="collapse" data-bs-target="#accordion-list-3" class="collapsed"><span>03</span> Dolor sit amet consectetur adipiscing elit? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                  <div id="accordion-list-3" class="collapse" data-bs-parent=".accordion-list">
+                    <p>
+                      Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
+                    </p>
+                  </div>
+                </li>
+
+              </ul>
+            </div>
+
           </div>
 
-          <div class="col-lg-6 mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="200">
-            <div class="member d-flex align-items-start">
-              <div class="pic"><img src="photos/20200301_111356.jpg" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Frontend Developer Vue | Laravel</h4>
-                <span>HubStart.IO | USA</span>
-                <p>Aug 2022 - Oct 2023 · 1 yr 3 mos</p>
-                <div class="social">
-                  <a href=""><i class="ri-twitter-fill"></i></a>
-                  <a href=""><i class="ri-facebook-fill"></i></a>
-                  <a href=""><i class="ri-instagram-fill"></i></a>
-                  <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6 mt-4" data-aos="zoom-in" data-aos-delay="300">
-            <div class="member d-flex align-items-start">
-              <div class="pic"><img src="photos/20200301_111356.jpg" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Frontend Web Developer</h4>
-                <span>SearchInform.COM | Singapur</span>
-                <p>Mar 2020 - Feb 2022 · 2 yrs</p>
-                <div class="social">
-                  <a href=""><i class="ri-twitter-fill"></i></a>
-                  <a href=""><i class="ri-facebook-fill"></i></a>
-                  <a href=""><i class="ri-instagram-fill"></i></a>
-                  <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6 mt-4" data-aos="zoom-in" data-aos-delay="400">
-            <div class="member d-flex align-items-start">
-              <div class="pic"><img src="photos/20200301_111356.jpg" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Head of technical support Department</h4>
-                <span>SearchInform.COM | Singapur</span>
-                <p>Jul 2015 - Mar 2020 · 4 yrs 9 mos</p>
-                <div class="social">
-                  <a href=""><i class="ri-twitter-fill"></i></a>
-                  <a href=""><i class="ri-facebook-fill"></i></a>
-                  <a href=""><i class="ri-instagram-fill"></i></a>
-                  <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
+          <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img" style='background-color: whitesmoke;' data-aos="zoom-in" data-aos-delay="150"><img src="photos/20200301_111356.jpg" class="img-fluid animated" alt=""></div>
         </div>
 
       </div>
-    </section><!-- End Team Section -->
+    </section><!-- End Why Us Section -->
+
 
     <!-- ======= Pricing Section ======= -->
-    <section id="pricing" class="pricing">
+    <section id="pricing" class="pricing d-none">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
@@ -556,7 +570,7 @@
                 <li class="na"><i class="bx bx-x"></i> <span>Pharetra massa massa ultricies</span></li>
                 <li class="na"><i class="bx bx-x"></i> <span>Massa ultricies mi quis hendrerit</span></li>
               </ul>
-              <a href="#" class="buy-btn">Get Started</a>
+              <a href="#">Download CV</a>
             </div>
           </div>
 
@@ -812,31 +826,46 @@
       </div>
     </div>
   </footer><!-- End Footer -->
-
-  <div class="container">
-    <TopBanner />
-    <MainBio />
-    <RelevantExperience />
-    <ProjectsList />
-    <ContactMe />
-  </div>
 </template>
 
 <script>
-import TopBanner from './components/TopBanner.vue'
-import MainBio from './components/MainBio.vue'
-import ProjectsList from './components/ProjectsList.vue'
-import RelevantExperience from './components/RelevantExperience.vue'
-import ContactMe from './components/ContactMe.vue';
 
 export default {
   name: 'App',
   components: {
-    TopBanner,
-    MainBio,
-    ProjectsList,
-    RelevantExperience,
-    ContactMe,
+  },
+  data() {
+    return {
+      videoVisible: false,
+    };
+  },
+  methods: {
+    downloadCv() {
+      // Replace 'your-pdf-file.pdf' with the actual name of your PDF file
+      const pdfFileName = 'CV.pdf';
+
+      // Constructing the URL for the PDF file in the public/assets directory
+      const pdfFilePath = process.env.BASE_URL + 'assets/' + pdfFileName;
+
+      // Creating a temporary link element
+      const link = document.createElement('a');
+      link.href = pdfFilePath;
+
+      // Specifying the download attribute and filename for the link
+      link.download = pdfFileName;
+
+      // Appending the link to the document body
+      document.body.appendChild(link);
+
+      // Triggering a click event on the link to start the download
+      link.click();
+
+      // Removing the link from the document body after the download is complete
+      document.body.removeChild(link);
+    },
+    showVideo() {
+      this.videoVisible = true;
+    },
   }
 }
 </script>
@@ -979,6 +1008,7 @@ h6 {
 
 #header .logo a {
   color: #fff;
+  text-decoration: none;
 }
 
 #header .logo img {
@@ -1269,6 +1299,7 @@ h6 {
   margin: 10px 0 0 0;
   color: #fff;
   background: #47b2e4;
+  text-decoration: none;
 }
 
 #hero .btn-get-started:hover {
@@ -1698,6 +1729,7 @@ section {
 }
 .icon-box {
   margin-bottom: 15px;
+  cursor: pointer;
 }
 
 .services .icon-box .icon {
@@ -1952,6 +1984,9 @@ section {
   background: #fff;
   transition: 0.5s;
   height: 100%;
+}
+.member {
+  cursor:pointer;
 }
 
 .team .member .pic {
