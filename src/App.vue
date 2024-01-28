@@ -1,4 +1,5 @@
 <template>
+  <side-bar/>
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top ">
     <div class="container d-flex align-items-center">
@@ -64,7 +65,7 @@
           </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
-          <img src="photos/cosmo.png" class="img-fluid animated" style="height: 70vh" alt="Me ready to fly">
+          <img src="photos/cosmo.png" class="img-fluid animated" style="" alt="Me ready to fly">
         </div>
       </div>
     </div>
@@ -312,46 +313,45 @@
 
         <div class="row">
           <div class="col-lg-6 d-flex align-items-center" data-aos="fade-right" data-aos-delay="100">
-            <img src="photos/20200301_111356.jpg" class="img-fluid" alt="">
+            <img src="photos/20200301_111356.jpg" class="img-fluid" alt="" style="border-radius: 15px">
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left" data-aos-delay="100">
-            <h3>Voluptatem dignissimos provident quasi corporis voluptates</h3>
+            <h3>So, if you're seeking a developer who not only brings formidable skills to the table but also infuses a sense of enjoyment into every collaboration, search no further. Let's unite to make waves in the IT realm, conjuring coding marvels together!</h3>
             <p class="fst-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
+              When faced with challenges, I confront them head-on, channeling my enthusiasm into robust solutions. Complications are mere opportunities for me to showcase my problem-solving finesse. My track record speaks volumes; I consistently deliver exceptional results, and I take pride in crafting solutions that inspire awe.
             </p>
 
-            <div class="skills-content">
+<!--            <div class="skills-content">-->
 
-              <div class="progress">
-                <span class="skill">HTML <i class="val">100%</i></span>
-                <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
+<!--              <div class="progress">-->
+<!--                <span class="skill">HTML <i class="val">100%</i></span>-->
+<!--                <div class="progress-bar-wrap">-->
+<!--                  <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>-->
+<!--                </div>-->
+<!--              </div>-->
 
-              <div class="progress">
-                <span class="skill">CSS <i class="val">90%</i></span>
-                <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
+<!--              <div class="progress">-->
+<!--                <span class="skill">CSS <i class="val">90%</i></span>-->
+<!--                <div class="progress-bar-wrap">-->
+<!--                  <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>-->
+<!--                </div>-->
+<!--              </div>-->
 
-              <div class="progress">
-                <span class="skill">JavaScript <i class="val">75%</i></span>
-                <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
+<!--              <div class="progress">-->
+<!--                <span class="skill">JavaScript <i class="val">75%</i></span>-->
+<!--                <div class="progress-bar-wrap">-->
+<!--                  <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>-->
+<!--                </div>-->
+<!--              </div>-->
 
-              <div class="progress">
-                <span class="skill">Photoshop <i class="val">55%</i></span>
-                <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
+<!--              <div class="progress">-->
+<!--                <span class="skill">Photoshop <i class="val">55%</i></span>-->
+<!--                <div class="progress-bar-wrap">-->
+<!--                  <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>-->
+<!--                </div>-->
+<!--              </div>-->
 
-            </div>
+<!--            </div>-->
 
           </div>
         </div>
@@ -830,9 +830,12 @@
 
 <script>
 
+import SideBar from "@/components/SideBar.vue";
+
 export default {
   name: 'App',
   components: {
+    SideBar
   },
   data() {
     return {
@@ -1344,6 +1347,7 @@ h6 {
 
   #hero .hero-img {
     text-align: center;
+    height: 74vh;
   }
 
   #hero .hero-img img {
@@ -1370,7 +1374,8 @@ h6 {
 
 @media (max-width: 575px) {
   #hero .hero-img img {
-    width: 80%;
+    width: 100%;
+    height: 80%;
   }
 
   #hero .btn-get-started {
