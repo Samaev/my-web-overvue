@@ -19,7 +19,7 @@
           <li><a class="nav-link scrollto" href="#about">{{ $t('about') }}</a></li>
           <li><a class="nav-link scrollto" href="#services">{{ $t('education') }}</a></li>
           <li><a class="nav-link   scrollto" href="#portfolio">{{ $t('portfolio') }}</a></li>
-          <li><a class="nav-link scrollto" href="#team">{{ $t('experience') }}</a></li>
+          <li><a class="nav-link scrollto" href="#experience">{{ $t('experience') }}</a></li>
           <li><a class="nav-link scrollto" href="#contact">{{ $t('contacts') }}</a></li>
         </ul>
       </nav>
@@ -102,12 +102,7 @@
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0">
             <p>
-              With a whopping 3+ years of full-time production in Web Development, I've become a coding maestro! VueJS and Laravel are practically my best buddies, and my HTML/CSS/Bootstrap skills are so sharp they can cut through code like a hot knife through butter – preprocessors don't stand a chance!
-              So here's a concise summary of my 4+ yr commercial experience: 2 years of Software Information Security with Vanilla JS and Vue.js + 19 months of experience with Vue.js and Laravel with an American Healthcare product.
-              But hey, I'm not just a coding wizard – I'm also a master coordinator! I've led Support Managers and QA Engineers with the finesse of a conductor leading an orchestra. Teamwork is my jam, and I know how to keep the harmony going.
-              My love for the IT environment runs deep – it's been my home for a glorious 8 years. Working with native speakers at an American IT company has given me an "Upper Intermediate" level of English that allows me to chat tech like a pro.
-              When it comes to challenges, I don't back down – I tackle them head-on with gusto! Complications? Pfft, they're no match for my problem-solving skills. My results are always top-notch, and I'm not afraid to show off my magic touch in creating the most awe-inspiring solutions.
-              So, if you need a developer who's not just skilled but also fun to work with, look no further! Let's rock this IT world together and make some coding magic happen!
+             {{ $t('brief')}}
             </p>
           </div>
         </div>
@@ -116,35 +111,12 @@
     </section><!-- End About Me Section -->
 
     <!-- ======= Education ======= -->
-    <section id="team" class="team section-bg">
+    <section id="experience" class="experience section-bg">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Experience</h2>
-          <p>Proficient in JavaScript language fundamentals and concepts.
-            Comfortable with asynchronous programming and promises.
-            Vue.js and React Proficiency:
-
-            Two years of hands-on experience with Vue.js and React frameworks.
-            Skilled in building dynamic and interactive user interfaces.
-            Familiar with component-based architecture and reusability.
-            Front-End Development:
-
-            Strong understanding of front-end architecture patterns.
-            Capable of efficiently managing state and handling UI updates.
-            Experienced in integrating APIs to create data-driven applications.
-            Technical Insights:
-
-            Knowledge of virtual DOM and its role in optimizing UI rendering.
-            Familiarity with component lifecycle management and reactivity concepts.
-            Comparative Framework Knowledge:
-
-            Able to assess the strengths and differences between Vue.js and React.
-            Equipped to make informed framework choices based on project requirements.
-            Core Web Technologies:
-
-            Solid grasp of HTML, CSS, and related styling concepts.
-            Potentially experienced with CSS preprocessors (e.g., Sass, Less).</p>
+          <h2>{{ $t('experience')}}</h2>
+          <p>{{ $t('experienceIntro')}}</p>
         </div>
 
         <div class="row">
@@ -153,7 +125,7 @@
             <div class="member d-flex align-items-start">
               <div class="pic"><img src="photos/core.jpg" class="img-fluid" alt=""></div>
               <div class="member-info">
-                <h4>Frontend Developer</h4>
+                <h4>Frontend Developer Vue | Laravel</h4>
                 <span>CORE IT Development | Latvia</span>
                 <p>Oct 2023 - Present · 4 mos</p>
               </div>
@@ -175,7 +147,7 @@
             <div class="member d-flex align-items-start">
               <div class="pic"><img src="photos/searchinform.jpg" class="img-fluid" alt=""></div>
               <div class="member-info">
-                <h4>Frontend Web Developer</h4>
+                <h4>Frontend Web Developer VueJS | React</h4>
                 <span>SearchInform.COM | Singapur</span>
                 <p>Mar 2020 - Feb 2022 · 2 yrs</p>
 
@@ -197,14 +169,14 @@
         </div>
 
       </div>
-    </section><!-- End Team Section -->
+    </section>
 
     <!-- ======= Education ======= -->
     <section id="services" class="services section-bg">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Education</h2>
+          <h2>{{  $t('education') }}</h2>
           <p>Master`s degree in Engineering</p>
         </div>
 
@@ -213,7 +185,7 @@
             <div class="icon-box w-100 row">
               <div class="icon col col-lg-3"><img class="univer" src="photos/vnu.jpg" alt="University"></div>
               <div class="col col-lg-9">
-                <h4 ><a href="">East Ukranian National Technical University</a></h4>
+                <h4 ><a href="">East Ukrainian National Technical University</a></h4>
                 <p>Master`s degree in Engineering with honors</p>
               </div>
 
@@ -463,7 +435,7 @@
               <li><i class="bx bx-chevron-right"></i> <a href="#about">{{ $t('about') }}</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#services">{{ $t('education') }}</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#portfolio">{{ $t('portfolio') }}</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#team">{{ $t('experience') }}</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#experience">{{ $t('experience') }}</a></li>
             </ul>
           </div>
 
@@ -1476,10 +1448,8 @@ section {
   padding: 0;
 }
 
-/*--------------------------------------------------------------
-# Team
---------------------------------------------------------------*/
-.team .member {
+
+.experience .member {
   position: relative;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
   padding: 30px;
@@ -1492,32 +1462,32 @@ section {
   cursor:pointer;
 }
 
-.team .member .pic {
+.experience .member .pic {
   overflow: hidden;
   width: 180px;
   border-radius: 50%;
 }
 
-.team .member .pic img {
+.experience .member .pic img {
   transition: ease-in-out 0.3s;
 }
 
-.team .member:hover {
+.experience .member:hover {
   transform: translateY(-10px);
 }
 
-.team .member .member-info {
+.experience .member .member-info {
   padding-left: 30px;
 }
 
-.team .member h4 {
+.experience .member h4 {
   font-weight: 700;
   margin-bottom: 5px;
   font-size: 20px;
   color: #37517e;
 }
 
-.team .member span {
+.experience .member span {
   display: block;
   font-size: 15px;
   padding-bottom: 10px;
@@ -1525,7 +1495,7 @@ section {
   font-weight: 500;
 }
 
-.team .member span::after {
+.experience .member span::after {
   content: "";
   position: absolute;
   display: block;
@@ -1536,19 +1506,19 @@ section {
   left: 0;
 }
 
-.team .member p {
+.experience .member p {
   margin: 10px 0 0 0;
   font-size: 14px;
 }
 
-.team .member .social {
+.experience .member .social {
   margin-top: 12px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
 }
 
-.team .member .social a {
+.experience .member .social a {
   transition: ease-in-out 0.3s;
   display: flex;
   align-items: center;
@@ -1559,21 +1529,21 @@ section {
   background: #eff2f8;
 }
 
-.team .member .social a i {
+.experience .member .social a i {
   color: #37517e;
   font-size: 16px;
   margin: 0 2px;
 }
 
-.team .member .social a:hover {
+.experience .member .social a:hover {
   background: #47b2e4;
 }
 
-.team .member .social a:hover i {
+.experience .member .social a:hover i {
   color: #fff;
 }
 
-.team .member .social a+a {
+.experience .member .social a+a {
   margin-left: 8px;
 }
 
