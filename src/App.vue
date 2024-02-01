@@ -37,7 +37,7 @@
             <a href="javascript:void(0)" @click="downloadCv" class="btn-get-started">{{ $t('downloadCv') }}</a>
             <a href="javascript:void(0)" @click="showVideo" class="btn-watch-video"><img src="photos/yt.png" style="height: 40px;margin-right: 10px" alt="you tube icon"><span>{{ $t('watchIntro')}}</span></a>
               <div v-if="videoVisible" class="video-wrapper">
-                <iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/0M2x4r7IPrc?si=CgPoCEIVbOHSKJN2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/mVtO_Uexb9Q?si=XN22yUVxgaqoQU5E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 <button class="close-video" @click="videoVisible=false">X</button>
               </div>
           </div>
@@ -51,9 +51,7 @@
   </section>
 
   <main id="main">
-
-    <!-- ======= Clients Section ======= -->
-    <section id="clients" class="clients section-bg">
+    <section id="skills" class="skills section-bg">
       <div class="container">
 
         <div class="row" data-aos="zoom-in">
@@ -85,30 +83,30 @@
         </div>
 
       </div>
-    </section><!-- End Cliens Section -->
+    </section>
 
     <!-- ======= About Me Section ======= -->
     <section id="about" class="about">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>About Myself</h2>
+          <h2>{{ $t('about') }}</h2>
         </div>
 
         <div class="row content">
-          <div class="col-lg-6">
+          <div class="col-lg-6 about-myself-image-container">
             <p>
-                With a whopping 3+ years of full-time production in Web Development, I've become a coding maestro! VueJS and Laravel are practically my best buddies, and my HTML/CSS/Bootstrap skills are so sharp they can cut through code like a hot knife through butter – preprocessors don't stand a chance!
-                So here's a concise summary of my 4+ yr commercial experience: 2 years of Software Information Security with Vanilla JS and Vue.js + 19 months of experience with Vue.js and Laravel with an American Healthcare product.
-                But hey, I'm not just a coding wizard – I'm also a master coordinator! I've led Support Managers and QA Engineers with the finesse of a conductor leading an orchestra. Teamwork is my jam, and I know how to keep the harmony going.
-                My love for the IT environment runs deep – it's been my home for a glorious 8 years. Working with native speakers at an American IT company has given me an "Upper Intermediate" level of English that allows me to chat tech like a pro.
-                When it comes to challenges, I don't back down – I tackle them head-on with gusto! Complications? Pfft, they're no match for my problem-solving skills. My results are always top-notch, and I'm not afraid to show off my magic touch in creating the most awe-inspiring solutions.
-              So, if you need a developer who's not just skilled but also fun to work with, look no further! Let's rock this IT world together and make some coding magic happen!
+              {{ $t('originalText') }}
             </p>
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0">
             <p>
-              {{ $t('originalText') }}
+              With a whopping 3+ years of full-time production in Web Development, I've become a coding maestro! VueJS and Laravel are practically my best buddies, and my HTML/CSS/Bootstrap skills are so sharp they can cut through code like a hot knife through butter – preprocessors don't stand a chance!
+              So here's a concise summary of my 4+ yr commercial experience: 2 years of Software Information Security with Vanilla JS and Vue.js + 19 months of experience with Vue.js and Laravel with an American Healthcare product.
+              But hey, I'm not just a coding wizard – I'm also a master coordinator! I've led Support Managers and QA Engineers with the finesse of a conductor leading an orchestra. Teamwork is my jam, and I know how to keep the harmony going.
+              My love for the IT environment runs deep – it's been my home for a glorious 8 years. Working with native speakers at an American IT company has given me an "Upper Intermediate" level of English that allows me to chat tech like a pro.
+              When it comes to challenges, I don't back down – I tackle them head-on with gusto! Complications? Pfft, they're no match for my problem-solving skills. My results are always top-notch, and I'm not afraid to show off my magic touch in creating the most awe-inspiring solutions.
+              So, if you need a developer who's not just skilled but also fun to work with, look no further! Let's rock this IT world together and make some coding magic happen!
             </p>
           </div>
         </div>
@@ -1027,14 +1025,14 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Clients
+# skills
 --------------------------------------------------------------*/
-.clients {
+.skills {
   padding: 12px 0;
   text-align: center;
 }
 
-.clients img {
+.skills img {
   max-width: 45%;
   transition: all 0.4s ease-in-out;
   display: inline-block;
@@ -1042,13 +1040,13 @@ section {
   filter: grayscale(100);
 }
 
-.clients img:hover {
+.skills img:hover {
   filter: none;
   transform: scale(1.1);
 }
 
 @media (max-width: 768px) {
-  .clients img {
+  .skills img {
     max-width: 40%;
   }
 }
@@ -2359,4 +2357,16 @@ input.check-toggle-round-flat:checked + label:after {
   left:30%;
   z-index: 3;
 }
+.about-myself-image-container {
+  background-image: url('../public/photos/beach1.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  background-position: center;
+  font-size: 18px;
+  padding: 0 40px;
+  font-weight: bold;
+  height: 500px;
+}
+
 </style>
