@@ -26,7 +26,7 @@ const i18n = createI18n({
             downloadCv: 'Download CV',
             years: 'years',
             watchIntro: 'Watch Intro',
-            originalText: "My name is Andrey Samaev. I'm Web Developer with strong Laravel Experience as well. Experienced English-speaking Web Developer with 4+ years of comercial experience, specializing in Web Development. Skilled in direct client contact to deliver exactly what they want. Ready to take on new challenges! Let's create something amazing together!",
+            originalText: "My name is Andrey Samaev. I'm Web Developer with strong VueJS | Laravel Experience as well. Experienced English-speaking Web Developer with 4+ years of comercial experience, specializing in Web Development. Skilled in direct client contact to deliver exactly what they want. Ready to take on new challenges! Let's create something amazing together!",
             
         },
         ua: {
@@ -45,7 +45,7 @@ const i18n = createI18n({
             downloadCv: 'Скачати резюме',
             years: 'роки',
             watchIntro: 'Познайомитися',
-            originalText : 'Мене звати Андрій Самаєв. Я також веб-розробник із великим досвідом роботи з Laravel. Досвідчений англомовний веб-розробник з 4+ роками комерційного досвіду, спеціалізується на веб-розробці. Має навички прямого контакту з клієнтами, щоб забезпечити саме те, що вони хочуть. Готовий до нових викликів! Давайте створювати щось дивовижне разом!',
+            originalText : 'Мене звати Андрій Самаєв. Я  веб-розробник із великим досвідом роботи з VueJs та Laravel. Досвідчений англомовний веб-розробник з 4+ роками комерційного досвіду, спеціалізуюся на веб-розробці. Маю навички прямого контакту з клієнтами, щоб забезпечити саме те, що вони хочуть. Готовий до нових викликів! Давайте створювати щось дивовижне разом!',
         },
     },
 });

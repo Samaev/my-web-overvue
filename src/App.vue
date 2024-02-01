@@ -1,4 +1,5 @@
 <template>
+  <div>
   <!-- ======= Header ======= -->
     <div class="switch">
       <input id="language-toggle" class="check-toggle check-toggle-round-flat" type="checkbox">
@@ -94,9 +95,9 @@
         </div>
 
         <div class="row content">
-          <div class="col-lg-6 about-myself-image-container">
+          <div class="col-lg-6 about-myself-image-container content" ref="content" @scroll="handleScroll">
             <p>
-              {{ $t('originalText') }}
+              {{ typingText }}
             </p>
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0">
@@ -488,7 +489,8 @@
         reDesigned by Andrey Samaev
       </div>
     </div>
-  </footer><!-- End Footer -->
+  </footer>
+  </div>
 </template>
 
 <script>
@@ -499,11 +501,42 @@ export default {
   data() {
     return {
       videoVisible: false,
+      typingText: "",
+      originalText: this.$t('originalText'),
+      isTypingStarted: false,
+      typingInterval: null,
     };
   },
   methods: {
+    simulateTyping() {
+      let index = 0;
+      this.typingText = "";
+      this.typingInterval = setInterval(() => {
+        this.typingText += this.originalText[index];
+        index++;
+        if (index === this.originalText.length) {
+          clearInterval(this.typingInterval);
+        }
+      }, 100);
+    },
+    handleScroll() {
+      const contentElement = this.$refs.content;
+      const rect = contentElement.getBoundingClientRect();
+      const isVisible = (
+          rect.top >= 0 &&
+          rect.left >= 0 &&
+          rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+          rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+      );
+
+      // Start typing simulation if the element is visible and typing hasn't started yet
+      if (isVisible && !this.isTypingStarted) {
+        this.simulateTyping();
+        this.isTypingStarted = true;
+      }
+    },
     downloadCv() {
-      const pdfFileName = 'CV.pdf';
+      const pdfFileName = 'AndreySamaevVueLaravel.pdf';
       const pdfFilePath = process.env.BASE_URL + 'assets/' + pdfFileName;
       const link = document.createElement('a');
       link.href = pdfFilePath;
@@ -516,14 +549,29 @@ export default {
       this.videoVisible = true;
     },
     changeLanguage() {
+
       const locale  = this.$i18n.locale;
       if (locale === "en") {
         this.$i18n.locale = 'ua';
       } else {
         this.$i18n.locale = 'en';
       }
-      localStorage.setItem('userLocale', locale);
+      localStorage.setItem('userLocale', this.$i18n.locale);
+      this.originalText = this.$t('originalText');
+      clearInterval(this.typingInterval);
+      this.simulateTyping();
     },
+  },
+  mounted() {
+    // Add a scroll event listener to the window object
+    window.addEventListener("scroll", this.handleScroll);
+
+    // Trigger the initial check on mount
+    this.handleScroll();
+  },
+  beforeUnmount() {
+    // Remove the scroll event listener when the component is destroyed
+    window.removeEventListener("scroll", this.handleScroll);
   }
 }
 </script>
@@ -1108,134 +1156,7 @@ section {
   text-decoration: none;
 }
 
-/*--------------------------------------------------------------
-# Why Us
---------------------------------------------------------------*/
-.why-us .content {
-  padding: 60px 100px 0 100px;
-}
 
-.why-us .content h3 {
-  font-weight: 400;
-  font-size: 34px;
-  color: #37517e;
-}
-
-.why-us .content h4 {
-  font-size: 20px;
-  font-weight: 700;
-  margin-top: 5px;
-}
-
-.why-us .content p {
-  font-size: 15px;
-  color: #848484;
-}
-
-.why-us .img {
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-
-.why-us .accordion-list {
-  padding: 0 100px 60px 100px;
-}
-
-.why-us .accordion-list ul {
-  padding: 0;
-  list-style: none;
-}
-
-.why-us .accordion-list li+li {
-  margin-top: 15px;
-}
-
-.why-us .accordion-list li {
-  padding: 20px;
-  background: #fff;
-  border-radius: 4px;
-}
-
-.why-us .accordion-list a {
-  display: block;
-  position: relative;
-  font-family: "Poppins", sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 500;
-  padding-right: 30px;
-  outline: none;
-  cursor: pointer;
-}
-
-.why-us .accordion-list span {
-  color: #47b2e4;
-  font-weight: 600;
-  font-size: 18px;
-  padding-right: 10px;
-}
-
-.why-us .accordion-list i {
-  font-size: 24px;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-
-.why-us .accordion-list p {
-  margin-bottom: 0;
-  padding: 10px 0 0 0;
-}
-
-.why-us .accordion-list .icon-show {
-  display: none;
-}
-
-.why-us .accordion-list a.collapsed {
-  color: #343a40;
-}
-
-.why-us .accordion-list a.collapsed:hover {
-  color: #47b2e4;
-}
-
-.why-us .accordion-list a.collapsed .icon-show {
-  display: inline-block;
-}
-
-.why-us .accordion-list a.collapsed .icon-close {
-  display: none;
-}
-
-@media (max-width: 1024px) {
-
-  .why-us .content,
-  .why-us .accordion-list {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media (max-width: 992px) {
-  .why-us .img {
-    min-height: 400px;
-  }
-
-  .why-us .content {
-    padding-top: 30px;
-  }
-
-  .why-us .accordion-list {
-    padding-bottom: 30px;
-  }
-}
-
-@media (max-width: 575px) {
-  .why-us .img {
-    min-height: 200px;
-  }
-}
 
 /*--------------------------------------------------------------
 # Skills
