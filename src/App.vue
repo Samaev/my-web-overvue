@@ -1,40 +1,42 @@
 <template>
   <!-- ======= Header ======= -->
+    <div class="switch">
+      <input id="language-toggle" class="check-toggle check-toggle-round-flat" type="checkbox">
+      <label for="language-toggle" @click="changeLanguage"></label>
+      <span class="on">{{ $t('en') }}</span>
+      <span class="off">{{ $t('ua') }}</span>
+    </div>
   <header id="header" class="fixed-top ">
     <div class="container d-flex align-items-center">
       <div style="height: 40px;width: 40px; background-color: white;border-radius: 50%;">
         <img src="photos/logo.jpg" alt="Me" style="position: relative;height: 40px;width: 40px; background-color: white;border-radius: 50%;">
       </div>
-      <h1 class="logo me-auto ms-4"><a href="index.html">SAMAEV</a></h1>
-
+      <h1 class="logo me-auto ms-4"><a href="index.html">{{ $t('me') }}</a></h1>
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About MySelf</a></li>
-          <li><a class="nav-link scrollto" href="#services">Education</a></li>
-          <li><a class="nav-link   scrollto" href="#portfolio">Portfolio</a></li>
-          <li><a class="nav-link scrollto" href="#team">Experience</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-
+          <li><a class="nav-link scrollto active" href="#hero">{{ $t('home') }}</a></li>
+          <li><a class="nav-link scrollto" href="#about">{{ $t('about') }}</a></li>
+          <li><a class="nav-link scrollto" href="#services">{{ $t('education') }}</a></li>
+          <li><a class="nav-link   scrollto" href="#portfolio">{{ $t('portfolio') }}</a></li>
+          <li><a class="nav-link scrollto" href="#team">{{ $t('experience') }}</a></li>
+          <li><a class="nav-link scrollto" href="#contact">{{ $t('contacts') }}</a></li>
         </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
+      </nav>
 
     </div>
-  </header><!-- End Header -->
+  </header>
 
-  <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
 
     <div class="container">
       <div class="row">
         <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
-          <h1>Frontend Web Developer</h1>
-          <h2>4+ years Vue + Laravel Experience</h2>
+          <h1>Frontend Web {{ $t('developer') }}</h1>
+          <h2>4+ {{ $t('years') }} Vue + Laravel {{ $t('experiences') }}</h2>
           <div class="d-flex justify-content-center justify-content-lg-start">
-            <a href="javascript:void(0)" @click="downloadCv" class="btn-get-started">Download CV</a>
-            <a href="javascript:void(0)" @click="showVideo" class="btn-watch-video"><img src="photos/yt.png" style="height: 20px;margin-right: 10px" alt="you tube icon"><span>Watch Intro</span></a>
-              <div v-if="videoVisible" style="position: fixed;top:20%;left:30%;z-index: 3">
+            <a href="javascript:void(0)" @click="downloadCv" class="btn-get-started">{{ $t('downloadCv') }}</a>
+            <a href="javascript:void(0)" @click="showVideo" class="btn-watch-video"><img src="photos/yt.png" style="height: 40px;margin-right: 10px" alt="you tube icon"><span>{{ $t('watchIntro')}}</span></a>
+              <div v-if="videoVisible" class="video-wrapper">
                 <iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/0M2x4r7IPrc?si=CgPoCEIVbOHSKJN2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 <button class="close-video" @click="videoVisible=false">X</button>
               </div>
@@ -46,7 +48,7 @@
       </div>
     </div>
 
-  </section><!-- End Hero -->
+  </section>
 
   <main id="main">
 
@@ -278,23 +280,16 @@
 
         <div class="section-title">
           <h2>Portfolio</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <p>Below you can see some examples of my projects. Ofcourse it is only part of them and it is omly my personal ones. </p>
+          <p>To get them all closely you can follow me on <a href="https://github.com/samaev" target="_blank">GitHUB</a></p>
+          <p>And of course I have commercial experience - we can discuss about them privately</p>
         </div>
-
-        <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
-          <li data-filter="*" class="filter-active">All</li>
-          <li data-filter=".filter-app">App</li>
-          <li data-filter=".filter-card">Card</li>
-          <li data-filter=".filter-web">Web</li>
-        </ul>
 
         <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-img"><img src="photos/portfolio.png" class="img-fluid" alt=""></div>
             <div class="portfolio-info">
-              <h4>App 1</h4>
-              <p>App</p>
               <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
               <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
@@ -303,8 +298,6 @@
           <div class="col-lg-4 col-md-6 portfolio-item filter-web">
             <div class="portfolio-img"><img src="photos/portfolio.png" class="img-fluid" alt=""></div>
             <div class="portfolio-info">
-<!--              <h4>Web 3</h4>-->
-<!--              <p>Web</p>-->
               <a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
               <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
@@ -313,8 +306,6 @@
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-img"><img src="photos/portfolio.png" class="img-fluid" alt=""></div>
             <div class="portfolio-info">
-              <h4>App 2</h4>
-              <p>App</p>
               <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
               <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
@@ -323,8 +314,6 @@
           <div class="col-lg-4 col-md-6 portfolio-item filter-card">
             <div class="portfolio-img"><img src="photos/portfolio.png" class="img-fluid" alt=""></div>
             <div class="portfolio-info">
-              <h4>Card 2</h4>
-              <p>Card</p>
               <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>
               <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
@@ -333,8 +322,6 @@
           <div class="col-lg-4 col-md-6 portfolio-item filter-web">
             <div class="portfolio-img"><img src="photos/portfolio.png" class="img-fluid" alt=""></div>
             <div class="portfolio-info">
-              <h4>Web 2</h4>
-              <p>Web</p>
               <a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 2"><i class="bx bx-plus"></i></a>
               <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
@@ -343,8 +330,6 @@
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-img"><img src="photos/portfolio.png" class="img-fluid" alt=""></div>
             <div class="portfolio-info">
-              <h4>App 3</h4>
-              <p>App</p>
               <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 3"><i class="bx bx-plus"></i></a>
               <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
@@ -353,8 +338,6 @@
           <div class="col-lg-4 col-md-6 portfolio-item filter-card">
             <div class="portfolio-img"><img src="photos/portfolio.png" class="img-fluid" alt=""></div>
             <div class="portfolio-info">
-              <h4>Card 1</h4>
-              <p>Card</p>
               <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 1"><i class="bx bx-plus"></i></a>
               <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
@@ -363,8 +346,6 @@
           <div class="col-lg-4 col-md-6 portfolio-item filter-card">
             <div class="portfolio-img"><img src="photos/portfolio.png" class="img-fluid" alt=""></div>
             <div class="portfolio-info">
-<!--              <h4>Card 3</h4>-->
-<!--              <p>Card</p>-->
               <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 3"><i class="bx bx-plus"></i></a>
               <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
@@ -373,8 +354,6 @@
           <div class="col-lg-4 col-md-6 portfolio-item filter-web">
             <div class="portfolio-img"><img src="photos/portfolio.png" class="img-fluid" alt=""></div>
             <div class="portfolio-info">
-<!--              <h4>Web 3</h4>-->
-<!--              <p>Web</p>-->
               <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
               <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
@@ -384,9 +363,7 @@
 
       </div>
     </section>
-    <!-- End Portfolio Section -->
 
-    <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
       <div class="container" data-aos="fade-up">
 
@@ -483,11 +460,11 @@
           <div class="col-lg-4 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About MySelf</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Education</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Portfolio</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Experience</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">{{ $t('home') }}</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#about">{{ $t('about') }}</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#services">{{ $t('education') }}</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#portfolio">{{ $t('portfolio') }}</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#team">{{ $t('experience') }}</a></li>
             </ul>
           </div>
 
@@ -528,30 +505,26 @@ export default {
   },
   methods: {
     downloadCv() {
-      // Replace 'your-pdf-file.pdf' with the actual name of your PDF file
       const pdfFileName = 'CV.pdf';
-
-      // Constructing the URL for the PDF file in the public/assets directory
       const pdfFilePath = process.env.BASE_URL + 'assets/' + pdfFileName;
-
-      // Creating a temporary link element
       const link = document.createElement('a');
       link.href = pdfFilePath;
-
-      // Specifying the download attribute and filename for the link
       link.download = pdfFileName;
-
-      // Appending the link to the document body
       document.body.appendChild(link);
-
-      // Triggering a click event on the link to start the download
       link.click();
-
-      // Removing the link from the document body after the download is complete
       document.body.removeChild(link);
     },
     showVideo() {
       this.videoVisible = true;
+    },
+    changeLanguage() {
+      const locale  = this.$i18n.locale;
+      if (locale === "en") {
+        this.$i18n.locale = 'ua';
+      } else {
+        this.$i18n.locale = 'en';
+      }
+      localStorage.setItem('userLocale', locale);
     },
   }
 }
@@ -562,17 +535,7 @@ export default {
   scroll-behavior: smooth;
 
 }
-/**
-* Template Name: Arsha
-* Updated: Jan 09 2024 with Bootstrap v5.3.2
-* Template URL: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 
-/*--------------------------------------------------------------
-# General
---------------------------------------------------------------*/
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
@@ -597,80 +560,6 @@ h6 {
   font-family: "Jost", sans-serif;
 }
 
-/*--------------------------------------------------------------
-# Preloader
---------------------------------------------------------------*/
-#preloader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 9999;
-  overflow: hidden;
-  background: #37517e;
-}
-
-#preloader:before {
-  content: "";
-  position: fixed;
-  top: calc(50% - 30px);
-  left: calc(50% - 30px);
-  border: 6px solid #37517e;
-  border-top-color: #fff;
-  border-bottom-color: #fff;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  animation: animate-preloader 1s linear infinite;
-}
-
-@keyframes animate-preloader {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-/*--------------------------------------------------------------
-# Back to top button
---------------------------------------------------------------*/
-.back-to-top {
-  position: fixed;
-  visibility: hidden;
-  opacity: 0;
-  right: 15px;
-  bottom: 15px;
-  z-index: 996;
-  background: #56595b;
-  width: 40px;
-  height: 40px;
-  border-radius: 50px;
-  transition: all 0.4s;
-}
-
-.back-to-top i {
-  font-size: 24px;
-  color: #fff;
-  line-height: 0;
-}
-
-.back-to-top:hover {
-  background: #6bc1e9;
-  color: #fff;
-}
-
-.back-to-top.active {
-  visibility: visible;
-  opacity: 1;
-}
-
-/*--------------------------------------------------------------
-# Header
---------------------------------------------------------------*/
 #header {
   transition: all 0.5s;
   z-index: 997;
@@ -702,12 +591,6 @@ h6 {
   max-height: 40px;
 }
 
-/*--------------------------------------------------------------
-# Navigation Menu
---------------------------------------------------------------*/
-/**
-* Desktop Navigation
-*/
 .navbar {
   padding: 0;
 }
@@ -835,9 +718,6 @@ h6 {
   }
 }
 
-/**
-* Mobile Navigation
-*/
 .mobile-nav-toggle {
   color: #fff;
   font-size: 28px;
@@ -2352,5 +2232,131 @@ section {
   transform: scale(1.2);
   transition: all 800ms ease;
 }
+.switch {
+  position: fixed;
+  display: inline-block;
+  margin: 0 5px;
+  z-index: 9999999999999999;
+  top: 3%;
+  right: 10px;
+}
+@media (max-width: 768px){
+  .switch{
+    top: 2%;
+    right: 60px;
+  }
+}
 
+.switch > span {
+  position: absolute;
+  top: 14px;
+  pointer-events: none;
+  font-family: 'Helvetica', Arial, sans-serif;
+  font-weight: bold;
+  font-size: 12px;
+  text-transform: uppercase;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, .06);
+  width: 50%;
+  text-align: center;
+}
+
+input.check-toggle-round-flat:checked ~ .off {
+  top:10px;
+  color: #5d5b5a;
+}
+
+input.check-toggle-round-flat:checked ~ .on {
+  top:10px;
+  color: #fff;
+}
+
+.switch > span.on {
+  left: 0;
+  padding-left: 2px;
+  color: #5d5b5a;
+  top:10px;
+}
+
+.switch > span.off {
+  right: 0;
+  padding-right: 4px;
+  color: #fff;
+  top:10px;
+
+}
+
+.check-toggle {
+  position: absolute;
+  margin-left: -9999px;
+  visibility: hidden;
+}
+.check-toggle + label {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+input.check-toggle-round-flat + label {
+  padding: 2px;
+  width: 97px;
+  height: 35px;
+  background-color: #5d5b5a;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  -ms-border-radius: 60px;
+  -o-border-radius: 60px;
+  border-radius: 60px;
+}
+input.check-toggle-round-flat + label:before, input.check-toggle-round-flat + label:after {
+  display: block;
+  position: absolute;
+  content: "";
+}
+
+input.check-toggle-round-flat + label:before {
+  top: 2px;
+  left: 2px;
+  bottom: 2px;
+  right: 2px;
+  background-color: #5d5b5a;
+
+  -moz-border-radius: 60px;
+  -ms-border-radius: 60px;
+  -o-border-radius: 60px;
+  border-radius: 60px;
+}
+input.check-toggle-round-flat + label:after {
+  top: 4px;
+  left: 4px;
+  bottom: 4px;
+  width: 48px;
+  background-color: #fff;
+  -webkit-border-radius: 52px;
+  -moz-border-radius: 52px;
+  -ms-border-radius: 52px;
+  -o-border-radius: 52px;
+  border-radius: 52px;
+  -webkit-transition: margin 0.2s;
+  -moz-transition: margin 0.2s;
+  -o-transition: margin 0.2s;
+  transition: margin 0.2s;
+}
+
+input.check-toggle-round-flat:checked + label {
+}
+
+input.check-toggle-round-flat:checked + label:after {
+  margin-left: 44px;
+}
+.video-wrapper {
+  position: fixed;
+  top:20%;
+  left:30%;
+  z-index: 3;
+}
 </style>
