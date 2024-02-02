@@ -125,9 +125,9 @@
             <div class="member d-flex align-items-start">
               <div class="pic"><img src="photos/core.jpg" class="img-fluid" alt=""></div>
               <div class="member-info">
-                <h4>Frontend Developer Vue | Laravel</h4>
-                <span>CORE IT Development | Latvia</span>
-                <p>Oct 2023 - Present · 4 mos</p>
+                <h4>{{ $t('frontendDeveloper')}} Vue | Laravel</h4>
+                <span>CORE IT Development | {{ $t('latvia')}}</span>
+                <p>{{ $t('october')}} 2023 - Present · 5 months</p>
               </div>
             </div>
           </div>
@@ -136,8 +136,8 @@
             <div class="member d-flex align-items-start">
               <div class="pic"><img src="photos/hubstart.jpg" class="img-fluid" alt=""></div>
               <div class="member-info">
-                <h4>Frontend Developer Vue | Laravel</h4>
-                <span>HubStart.IO | USA</span>
+                <h4>{{ $t('frontendDeveloper')}} Vue | Laravel</h4>
+                <span>HubStart.IO | {{ $t('usa')}}</span>
                 <p>Aug 2022 - Oct 2023 · 1 yr 3 mos</p>
               </div>
             </div>
@@ -147,8 +147,8 @@
             <div class="member d-flex align-items-start">
               <div class="pic"><img src="photos/searchinform.jpg" class="img-fluid" alt=""></div>
               <div class="member-info">
-                <h4>Frontend Web Developer VueJS | React</h4>
-                <span>SearchInform.COM | Singapur</span>
+                <h4>{{ $t('frontendDeveloper')}} VueJS | React</h4>
+                <span>SearchInform.COM | {{ $t('singapore')}}</span>
                 <p>Mar 2020 - Feb 2022 · 2 yrs</p>
 
               </div>
@@ -160,7 +160,7 @@
               <div class="pic"><img src="photos/searchinform.jpg" class="img-fluid" alt=""></div>
               <div class="member-info">
                 <h4>Head of technical support Department</h4>
-                <span>SearchInform.COM | Singapur</span>
+                <span>SearchInform.COM | {{ $t('singapore')}}</span>
                 <p>Jul 2015 - Mar 2020 · 4 yrs 9 mos</p>
               </div>
             </div>
@@ -213,11 +213,17 @@
       <div class="container" data-aos="fade-up">
 
         <div class="row">
-          <div class="col-lg-6 d-flex align-items-center" data-aos="fade-right" data-aos-delay="100">
-            <img src="photos/20200301_111356.jpg" class="img-fluid" alt="" style="border-radius: 15px">
+          <div class="col-lg-6 d-flex justify-content-center align-items-center" data-aos="fade-right" data-aos-delay="100">
+            <img src="photos/search.jpg" class="search-photo" alt="Me with a coffee" >
           </div>
-          <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left" data-aos-delay="100">
-            <h3>So, if you're seeking a developer who not only brings formidable skills to the table but also infuses a sense of enjoyment into every collaboration, search no further. Let's unite to make waves in the IT realm, conjuring coding marvels together!</h3>
+          <div class="col-lg-6 pt-4 pt-lg-0 content d-flex flex-column justify-content-around" data-aos="fade-left" data-aos-delay="100">
+            <h3>So, if you're in search of a developer </h3>
+            <div class="fst-italic">
+              who not only brings formidable skills to the table but also infuses a sense of enjoyment into every collaboration, search no further.
+            </div>
+            <p class="fst-italic">
+              Let's unite to make waves in the IT realm, conjuring coding marvels together!
+            </p>
             <p class="fst-italic">
               When faced with challenges, I confront them head-on, channeling my enthusiasm into robust solutions. Complications are mere opportunities for me to showcase my problem-solving finesse. My track record speaks volumes; I consistently deliver exceptional results, and I take pride in crafting solutions that inspire awe.
             </p>
@@ -228,30 +234,13 @@
     </section><!-- End Skills Section -->
 
 
-    <!-- ======= Cta Section ======= -->
-    <section id="cta" class="cta">
-      <div class="container" data-aos="zoom-in">
-
-        <div class="row">
-          <div class="col-lg-9 text-center text-lg-start">
-            <h3>Call To Action</h3>
-            <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          </div>
-          <div class="col-lg-3 cta-btn-container text-center">
-            <a class="cta-btn align-middle" href="#">Call To Action</a>
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End Cta Section -->
-
     <!-- ======= Portfolio Section ======= -->
     <section id="portfolio" class="portfolio">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Portfolio</h2>
-          <p>Below you can see some examples of my projects. Ofcourse it is only part of them and it is omly my personal ones. </p>
+          <h2>{{ $t('portfolio')}}</h2>
+          <p>Below you can see some examples of my projects. Of course it is only part of them and it is omly my personal ones. </p>
           <p>To get them all closely you can follow me on <a href="https://github.com/samaev" target="_blank">GitHUB</a></p>
           <p>And of course I have commercial experience - we can discuss about them privately</p>
         </div>
@@ -1052,28 +1041,11 @@ section {
   text-align: center;
 }
 
-.skills img {
-  max-width: 45%;
-  transition: all 0.4s ease-in-out;
-  display: inline-block;
-  padding: 15px 0;
-  filter: grayscale(100);
-}
-
 .skills img:hover {
   filter: none;
   transform: scale(1.1);
 }
 
-@media (max-width: 768px) {
-  .skills img {
-    max-width: 40%;
-  }
-}
-
-/*--------------------------------------------------------------
-# About Us
---------------------------------------------------------------*/
 .about .content h3 {
   font-weight: 600;
   font-size: 26px;
@@ -2258,6 +2230,14 @@ input.check-toggle-round-flat:checked + label:after {
   padding: 0 40px;
   font-weight: bold;
   height: 500px;
+}
+.search-photo {
+  transition: all 0.4s ease-in-out;
+  display: inline-block;
+  filter: grayscale(100);
+  height:500px;
+  width: auto;
+  border-radius: 10px;
 }
 
 </style>
