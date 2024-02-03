@@ -103,7 +103,7 @@
             </div>
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0">
-            <p class="text-justify">
+            <p class="text-justify text-brief">
              {{ $t('brief')}}
             </p>
           </div>
@@ -1434,7 +1434,6 @@ section {
   position: relative;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
   padding: 30px;
-  border-radius: 5px;
   background: #fff;
   transition: 0.5s;
   height: 100%;
@@ -2233,8 +2232,8 @@ input.check-toggle-round-flat:checked + label:after {
   background-image: url('../public/photos/beach1.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  border-radius: 10px;
   background-position: center;
+  box-shadow: 0px 2px 15px rgba(0, 23, 43, 0.1);
   font-size: 18px;
   padding: 0 40px;
   height: 500px;
@@ -2256,5 +2255,28 @@ input.check-toggle-round-flat:checked + label:after {
   margin: 10px;
   padding: 10px;
   border-radius: 10px;
+}
+.text-brief {
+  padding: 25px;
+  min-height: 500px;
+  box-shadow: 0px 2px 15px rgba(0, 23, 43, 0.1);
+}
+@media(max-width: 1400px){
+
+  .text-brief {
+    font-size: 15px;
+  }
+}
+@media(max-width: 1200px){
+
+  .text-brief {
+    font-size: 13px;
+  }
+}
+@media(max-width: 900px){
+
+  .text-brief {
+    font-size: 18px;
+  }
 }
 </style>
