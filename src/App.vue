@@ -96,12 +96,14 @@
 
         <div class="row content">
           <div class="col-lg-6 about-myself-image-container content" ref="content" @scroll="handleScroll">
-            <p>
-              {{ typingText }}
-            </p>
+            <div class="text-wrapper-white">
+              <p class="text-justify">
+                {{ typingText }}
+              </p>
+            </div>
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0">
-            <p>
+            <p class="text-justify">
              {{ $t('brief')}}
             </p>
           </div>
@@ -116,7 +118,7 @@
 
         <div class="section-title">
           <h2>{{ $t('experience')}}</h2>
-          <p>{{ $t('experienceIntro')}}</p>
+          <p class="text-justify">{{ $t('experienceIntro')}}</p>
         </div>
 
         <div class="row">
@@ -194,8 +196,8 @@
 
           <div class="col-xl-6 col-md-12 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
             <div class="icon-box w-100 row">
-              <div class="icon col-12 col-lg-6"><img class="univer" src="photos/academy.jpg" alt="Academy"></div>
-              <div class="col-12 col-lg-6">
+              <div class="icon col-12 col-lg-3"><img class="univer" style="width: 120px;" src="photos/academy.webp" alt="Academy"></div>
+              <div class="col col-lg-9">
                 <h4><a href="">Mate Academy</a></h4>
                 <p>Full-time Intensive Course Frontent Development / React</p>
               </div>
@@ -538,13 +540,20 @@ export default {
 </script>
 
 <style>
+@font-face {
+  font-family: "Fontatica";
+  src: url(../public/fonts/Fontatica4F.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal;
+
+}
 #app {
   scroll-behavior: smooth;
 
 }
 
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Jost", sans-serif !important;
   color: #444444;
 }
 
@@ -2132,10 +2141,10 @@ input.check-toggle-round-flat:checked ~ .on {
 }
 
 .switch > span.on {
-  left: 0;
+  left: 3px;
   padding-left: 2px;
   color: #5d5b5a;
-  top:10px;
+  top:9px;
 }
 
 .switch > span.off {
@@ -2164,7 +2173,7 @@ input.check-toggle-round-flat:checked ~ .on {
 
 input.check-toggle-round-flat + label {
   padding: 2px;
-  width: 97px;
+  width: 100px;
   height: 35px;
   background-color: #5d5b5a;
   -webkit-border-radius: 60px;
@@ -2228,7 +2237,6 @@ input.check-toggle-round-flat:checked + label:after {
   background-position: center;
   font-size: 18px;
   padding: 0 40px;
-  font-weight: bold;
   height: 500px;
 }
 .search-photo {
@@ -2239,5 +2247,14 @@ input.check-toggle-round-flat:checked + label:after {
   width: auto;
   border-radius: 10px;
 }
-
+.text-justify {
+  text-align: justify;
+}
+.text-wrapper-white {
+  background-color: aliceblue;
+  opacity: 0.5;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+}
 </style>
